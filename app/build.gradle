@@ -40,10 +40,11 @@ dependencies {
     compile 'com.tencent.tinker:tinker-android-lib:1.7.11'
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.didi.virtualapk:core:0.9.0'
-    testCompile 'junit:junit:4.12'
-    provided 'com.tencent.tinker:tinker-android-anno:1.7.11'
     compile 'com.jakewharton:butterknife:8.7.0'
+    compile 'com.android.support:support-v4:25.3.1'
+    testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
+    provided 'com.tencent.tinker:tinker-android-anno:1.7.11'
 }
 
 def gitSha() {

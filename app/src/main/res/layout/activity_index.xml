@@ -18,22 +18,27 @@
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:id="@+id/index_act_rg"
         android:orientation="horizontal">
         <RadioButton
             android:drawableTop="@android:drawable/btn_star"
+            android:id="@+id/index_act_rb_normal"
             android:text="常用"
             style="@style/IndexActivityRBStyle"/>
         <RadioButton
             android:drawableTop="@android:drawable/btn_star"
-            android:text="常用"
+            android:text="第三方"
+            android:id="@+id/index_act_rb_third"
             style="@style/IndexActivityRBStyle"/>
         <RadioButton
             android:drawableTop="@android:drawable/btn_star"
-            android:text="常用"
+            android:text="自定义"
+            android:id="@+id/index_act_rb_self"
             style="@style/IndexActivityRBStyle"/>
         <RadioButton
             android:drawableTop="@android:drawable/btn_star"
-            android:text="常用"
+            android:text="其它"
+            android:id="@+id/index_act_rb_other"
             style="@style/IndexActivityRBStyle"/>
     </RadioGroup>
 

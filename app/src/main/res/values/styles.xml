@@ -13,6 +13,7 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:gravity">center</item>
         <item name="android:button">@null</item>
+        <item name="android:textColor">@drawable/index_text_select</item>
         <item name="android:layout_weight">1</item>
     </style>
 
