@@ -1,28 +1,31 @@
-package com.yk.skill.androidskillplatform.normal;
+package com.yk.skill.androidskillplatform.normal.index;
 
 
-import android.os.Bundle;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.yk.skill.androidskillplatform.R;
 import com.yk.skill.androidskillplatform.base.BaseFragment;
-import com.yk.skill.androidskillplatform.listview.MyBaseAdapter;
 
 import butterknife.BindView;
 
 public class NormalFragment extends BaseFragment implements NormalFragmentDetail{
 
 
-    @BindView(R.id.fragment_normal_lv)
+   // @BindView(R.id.fragment_normal_lv)
     ListView mFragmentNormalLv;
 
-    NormalPresent mNormalPresent = new NormalPresent(this);
+    NormalPresent mNormalPresent = null;
     @Override
     public View initView() {
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_normal, null, false);
+        mFragmentNormalLv = (ListView) view.findViewById(R.id.fragment_normal_lv);
+        mNormalPresent = new NormalPresent(this,getActivity());
         return view;
     }
 
@@ -33,7 +36,13 @@ public class NormalFragment extends BaseFragment implements NormalFragmentDetail
     }
 
     @Override
-    public void setAdapter(MyBaseAdapter myBaseAdapter) {
+    public void setAdapter(BaseAdapter myBaseAdapter) {
         mFragmentNormalLv.setAdapter(myBaseAdapter);
+    }
+
+    @Override
+    public void setListViewHeader(View view) {
+
+        mFragmentNormalLv.addHeaderView(view,"ok",false);
     }
 }

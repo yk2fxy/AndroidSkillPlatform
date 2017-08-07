@@ -1,4 +1,4 @@
-package com.yk.skill.androidskillplatform.Third;
+package com.yk.skill.androidskillplatform.Third.index;
 
 import android.graphics.Color;
 import android.view.View;

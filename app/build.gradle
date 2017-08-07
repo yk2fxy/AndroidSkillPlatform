@@ -17,6 +17,15 @@ android {
         buildConfigField "String", "TINKER_ID", "\"1.0\""
         buildConfigField "String", "PLATFORM", "\"all\""
     }
+    sourceSets{
+        main{
+            res.srcDirs = [
+                'src/main/res/layout/item',
+                    'src/main/res/layout',
+                    'src/main/res'
+            ]
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false

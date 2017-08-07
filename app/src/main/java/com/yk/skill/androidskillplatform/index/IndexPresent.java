@@ -1,9 +1,9 @@
 package com.yk.skill.androidskillplatform.index;
 
 import com.yk.skill.androidskillplatform.R;
-import com.yk.skill.androidskillplatform.Third.ThirdFragment;
+import com.yk.skill.androidskillplatform.Third.index.ThirdFragment;
 import com.yk.skill.androidskillplatform.base.BaseFragment;
-import com.yk.skill.androidskillplatform.normal.NormalFragment;
+import com.yk.skill.androidskillplatform.normal.index.NormalFragment;
 
 import java.util.ArrayList;
 import java.util.List;
