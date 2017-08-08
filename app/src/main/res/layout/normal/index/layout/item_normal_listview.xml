@@ -47,7 +47,7 @@
         app:layout_constraintTop_toBottomOf="@+id/item_normal_list_title"
         app:layout_constraintRight_toLeftOf="@+id/imageButton"
         />
-        <ImageButton
+        <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:focusable="false"

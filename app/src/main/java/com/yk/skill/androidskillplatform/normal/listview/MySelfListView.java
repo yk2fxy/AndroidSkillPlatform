@@ -44,12 +44,25 @@ public class MySelfListView extends ListView implements AbsListView.OnScrollList
     private void initFooterView(Context context) {
         TextView tv = new TextView(context);
         tv.setText("this is footer");
+        tv.setTextSize(50);
+        tv.setTextColor(Color.RED);
         addFooterView(tv);
     }
+    //
+    public void setHeaderView(int viewId){
+        //getHeaderViewsCount();
+    }
+    //
+    public void setFooterView(int viewId){
 
+    }
     private void initHeaderView(Context context) {
         TextView tv = new TextView(context);
         tv.setText("this is header");
+        tv.setTextSize(50);
+        tv.setTextColor(Color.RED);
+        tv.measure(0,0);
+        tv.setPadding(0,-tv.getMeasuredHeight(),0,0);
         addHeaderView(tv);
     }
 

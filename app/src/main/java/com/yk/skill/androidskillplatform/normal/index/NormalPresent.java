@@ -1,7 +1,9 @@
 package com.yk.skill.androidskillplatform.normal.index;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -10,8 +12,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yk.skill.androidskillplatform.R;
+import com.yk.skill.androidskillplatform.index.IndexActivity;
 import com.yk.skill.androidskillplatform.listview.base.ListViewHolder;
 import com.yk.skill.androidskillplatform.listview.base.MyBaseAdapter;
+import com.yk.skill.androidskillplatform.normal.listview.ListViewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +26,7 @@ import java.util.List;
 
 public class NormalPresent {
     private  NormalFragmentDetail normalFragmentDetail;
-    List<NormalIndexItemBean> lists = new ArrayList<>();
+    SparseArray<NormalIndexItemBean> lists = new SparseArray<>();
     Context mContext;
     public NormalPresent(NormalFragmentDetail normalFragmentDetail,Context context) {
         this.normalFragmentDetail = normalFragmentDetail;
@@ -38,7 +42,7 @@ public class NormalPresent {
                 content = "Content" + j + "----->"+content;
             }
             bean.setContent(content);
-            lists.add(bean);
+            lists.put(i,bean);
         }
 
         BaseAdapter adapter = new MyBaseAdapter<NormalIndexItemBean>(lists,mContext,R.layout.item_normal_listview) {
@@ -62,9 +66,21 @@ public class NormalPresent {
         normalFragmentDetail.setItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(mContext,"dddddd"+i,Toast.LENGTH_LONG).show();
+               // Toast.makeText(mContext,"dddddd"+i,Toast.LENGTH_LONG).show();
+                gotoSelectPage(i);
             }
         });
         //normalFragmentDetail.setTitle("");
+    }
+
+    private void gotoSelectPage(int i) {
+        Intent intent = new Intent();
+        switch (i){
+            case 1:
+                intent = new Intent(mContext,ListViewActivity.class);
+               // intent.setClass(mContext,ListViewActivity.class);
+                break;
+        }
+        mContext.startActivity(intent);
     }
 }

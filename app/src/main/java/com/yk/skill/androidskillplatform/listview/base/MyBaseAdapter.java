@@ -1,6 +1,7 @@
 package com.yk.skill.androidskillplatform.listview.base;
 
 import android.content.Context;
+import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -16,10 +17,10 @@ import java.util.List;
  */
 
 public abstract class MyBaseAdapter<T> extends BaseAdapter {
-    List<T> datas = null;
+    SparseArray<T> datas = null;
     Context mContext;
     int mLayoutId;
-    public MyBaseAdapter(List<T> datas,Context context,int layoutId) {
+    public MyBaseAdapter(SparseArray<T> datas, Context context, int layoutId) {
         this.datas = datas;
         this.mContext = context;
         this.mLayoutId = layoutId;

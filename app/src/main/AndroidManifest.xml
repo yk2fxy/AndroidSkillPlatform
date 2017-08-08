@@ -24,6 +24,7 @@
         </activity>
         <activity android:name=".index.IndexActivity">
         </activity>
+        <activity android:name=".normal.listview.ListViewActivity"></activity>
     </application>
 
-</manifest>
+    </manifest>

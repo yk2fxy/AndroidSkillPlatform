@@ -3,10 +3,10 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <ListView
+    <com.yk.skill.androidskillplatform.normal.listview.MySelfListView
         android:id="@+id/fragment_normal_lv"
         android:layout_width="match_parent"
         android:divider="#999"
         android:dividerHeight="2dp"
-        android:layout_height="match_parent"></ListView>
+        android:layout_height="match_parent"></com.yk.skill.androidskillplatform.normal.listview.MySelfListView>
 </LinearLayout>
