@@ -21,6 +21,8 @@ android {
         main{
             res.srcDirs = [
                 'src/main/res/layout/item',
+                'src/main/res/layout/normal/index',
+                'src/main/res/layout/normal',
                     'src/main/res/layout',
                     'src/main/res'
             ]

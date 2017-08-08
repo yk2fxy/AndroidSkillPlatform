@@ -34,6 +34,7 @@ public class IndexActivity extends AppCompatActivity implements IndexViewDetail 
         //动画相关
         getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         Transition transition = TransitionInflater.from(this).inflateTransition(android.R.transition.explode);
+        transition.setDuration(3000);
         getWindow().setEnterTransition(transition);
         setContentView(R.layout.activity_index);
         ButterKnife.bind(this);

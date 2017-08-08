@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -41,8 +42,8 @@ public class NormalFragment extends BaseFragment implements NormalFragmentDetail
     }
 
     @Override
-    public void setListViewHeader(View view) {
-
-        mFragmentNormalLv.addHeaderView(view,"ok",false);
+    public void setItemClickListener(AdapterView.OnItemClickListener onItemClickListener) {
+        mFragmentNormalLv.setOnItemClickListener(onItemClickListener);
     }
+
 }
