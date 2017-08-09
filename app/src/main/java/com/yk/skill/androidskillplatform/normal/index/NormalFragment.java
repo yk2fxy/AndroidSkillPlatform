@@ -46,4 +46,9 @@ public class NormalFragment extends BaseFragment implements NormalFragmentDetail
         mFragmentNormalLv.setOnItemClickListener(onItemClickListener);
     }
 
+    @Override
+    public int getListViewHeaderCount() {
+        return mFragmentNormalLv.getHeaderViewsCount();
+    }
+
 }

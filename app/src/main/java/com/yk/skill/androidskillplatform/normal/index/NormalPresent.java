@@ -66,17 +66,16 @@ public class NormalPresent {
         normalFragmentDetail.setItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-               // Toast.makeText(mContext,"dddddd"+i,Toast.LENGTH_LONG).show();
                 gotoSelectPage(i);
             }
         });
-        //normalFragmentDetail.setTitle("");
     }
 
     private void gotoSelectPage(int i) {
         Intent intent = new Intent();
-        switch (i){
-            case 1:
+        int count = normalFragmentDetail.getListViewHeaderCount();
+        switch (i-count){
+            case 0:
                 intent = new Intent(mContext,ListViewActivity.class);
                // intent.setClass(mContext,ListViewActivity.class);
                 break;

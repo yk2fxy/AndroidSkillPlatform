@@ -1,25 +1,24 @@
 package com.yk.skill.androidskillplatform.normal.listview;
 
 import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
 import android.util.AttributeSet;
-import android.view.View;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.widget.AbsListView;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import com.yk.skill.androidskillplatform.R;
 
 /**
  * TODO: document your custom view class.
  */
 public class MySelfListView extends ListView implements AbsListView.OnScrollListener{
     Context context;
+    boolean isLoadingMode;
+    boolean isRefreshMode;
+    private TextView footerView;
+    private TextView headerView;
+
     public MySelfListView(Context context) {
         super(context);
         init(null, 0,context);
@@ -38,37 +37,60 @@ public class MySelfListView extends ListView implements AbsListView.OnScrollList
     private void init(AttributeSet attrs, int defStyle,Context context) {
         setOnScrollListener(this);
         initHeaderView(context);
-        initFooterView(context);
+       // initFooterView(context);
     }
 
     private void initFooterView(Context context) {
-        TextView tv = new TextView(context);
-        tv.setText("this is footer");
-        tv.setTextSize(50);
-        tv.setTextColor(Color.RED);
-        addFooterView(tv);
+        footerView = new TextView(context);
+        footerView.setText("this is footer");
+        footerView.setTextSize(50);
+        footerView.setTextColor(Color.RED);
+        addFooterView(footerView);
     }
     //
-    public void setHeaderView(int viewId){
-        //getHeaderViewsCount();
-    }
-    //
-    public void setFooterView(int viewId){
 
-    }
     private void initHeaderView(Context context) {
-        TextView tv = new TextView(context);
-        tv.setText("this is header");
-        tv.setTextSize(50);
-        tv.setTextColor(Color.RED);
-        tv.measure(0,0);
-        tv.setPadding(0,-tv.getMeasuredHeight(),0,0);
-        addHeaderView(tv);
+        headerView = new TextView(context);
+        headerView.setText("this is header");
+        headerView.setTextSize(50);
+        headerView.setTextColor(Color.RED);
+        headerView.measure(0,0);
+        headerView.setPadding(0,-headerView.getMeasuredHeight(),0,0);
+        addHeaderView(headerView);
     }
 
     @Override
-    public void onScrollStateChanged(AbsListView absListView, int i) {
+    public boolean onTouchEvent(MotionEvent ev) {
+        float downY = 0;
+        float curY = 0;
+        switch (ev.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                downY = ev.getRawY();
+                break;
+            case MotionEvent.ACTION_MOVE:
+                curY = ev.getRawY();
+                if(getFirstVisiblePosition()==0&&(curY-downY)<0)
+                return true;
+                break;
+        }
+        return super.onTouchEvent(ev);
+    }
 
+    @Override
+    public void onScrollStateChanged(AbsListView absListView, int scrollState) {
+            if(scrollState == OnScrollListener.SCROLL_STATE_IDLE){
+                if(getFirstVisiblePosition()==0&&!isRefreshMode){
+                    isRefreshMode = true;
+                    headerView.setPadding(0,0,0,0);
+                   // Toast.makeText(context,"this is header",Toast.LENGTH_SHORT).show();
+                    Log.i("onScrollStateChanged", "onScrollStateChanged: header");
+                }else if(getLastVisiblePosition()==getCount()-1){
+                   // Toast.makeText(context,"this is footer",Toast.LENGTH_SHORT).show();
+                    Log.i("onScrollStateChanged", "onScrollStateChanged: footer");
+                }
+            }else {
+                headerView.setPadding(0,-headerView.getMeasuredHeight(),0,0);
+            }
     }
 
     @Override

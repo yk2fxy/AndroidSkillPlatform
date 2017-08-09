@@ -11,4 +11,5 @@ import android.widget.BaseAdapter;
 public interface NormalFragmentDetail {
      void setAdapter(BaseAdapter myBaseAdapter);
     void setItemClickListener(AdapterView.OnItemClickListener onItemClickListener);
+    int getListViewHeaderCount();
 }
