@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="#fff"
     android:orientation="vertical">
-
+    <include layout="@layout/index_header_layout"/>
     <com.yk.skill.androidskillplatform.normal.listview.MySelfListView
         android:id="@+id/push_refresh_listview"
         android:layout_width="match_parent"

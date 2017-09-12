@@ -2,19 +2,19 @@ package com.yk.skill.androidskillplatform.normal.index;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.util.SparseArray;
+import android.text.InputType;
+import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yk.skill.androidskillplatform.R;
-import com.yk.skill.androidskillplatform.index.IndexActivity;
 import com.yk.skill.androidskillplatform.listview.base.ListViewHolder;
 import com.yk.skill.androidskillplatform.listview.base.MyBaseAdapter;
+import com.yk.skill.androidskillplatform.normal.animation.AnimationActivity;
+import com.yk.skill.androidskillplatform.normal.bluetooth.BluetoothActivity;
 import com.yk.skill.androidskillplatform.normal.listview.ListViewActivity;
 
 import java.util.ArrayList;
@@ -25,8 +25,9 @@ import java.util.List;
  */
 
 public class NormalPresent {
+    private static final String TAG = NormalPresent.class.getSimpleName();
     private  NormalFragmentDetail normalFragmentDetail;
-    SparseArray<NormalIndexItemBean> lists = new SparseArray<>();
+    List<NormalIndexItemBean> lists = new ArrayList<>();
     Context mContext;
     public NormalPresent(NormalFragmentDetail normalFragmentDetail,Context context) {
         this.normalFragmentDetail = normalFragmentDetail;
@@ -34,7 +35,7 @@ public class NormalPresent {
     }
 
     public void initDatas() {
-        for(int i=0;i<20;i++){
+        /*for(int i=0;i<20;i++){
             NormalIndexItemBean bean = new NormalIndexItemBean();
             bean.setTitle("Title"+i);
             String content = "Content" + i;
@@ -42,26 +43,42 @@ public class NormalPresent {
                 content = "Content" + j + "----->"+content;
             }
             bean.setContent(content);
-            lists.put(i,bean);
-        }
+            lists.add(bean);
+        }*/
+        NormalIndexItemBean listviewBean = new NormalIndexItemBean();
+        listviewBean.setTitle("ListView");
+        listviewBean.setContent("08-12 07:23:24.350 2379-22169/com.google.android.googlequicksearchbox:search I/AudioController: internalShutdown");
+        lists.add(listviewBean);
+        NormalIndexItemBean animationBean = new NormalIndexItemBean();
+        animationBean.setTitle("Animation");
+        animationBean.setContent("animation introduction");
+        lists.add(animationBean);
+        animationBean = new NormalIndexItemBean();
+        animationBean.setTitle("Bluetooth");
+        animationBean.setContent("蓝牙连接 introduction");
+        lists.add(animationBean);
 
         BaseAdapter adapter = new MyBaseAdapter<NormalIndexItemBean>(lists,mContext,R.layout.item_normal_listview) {
             @Override
-            public void converView(ListViewHolder holder, NormalIndexItemBean bean) {
+            public void converView(final ListViewHolder holder, NormalIndexItemBean bean) {
                 holder.setText(R.id.item_normal_list_title,bean.getTitle());
                 holder.setText(R.id.item_normal_list_content,bean.getContent());
+                holder.setOnClickListener(R.id.item_normal_list_more_img, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        TextView tv =  holder.getView(R.id.item_normal_list_content);
+                        tv.measure(0,0);
+                        tv.setMaxLines(10);
+                        tv.setHeight(500);
+                        tv.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+                        Log.i(TAG, "onClick: "+tv.getMeasuredHeight()+"---w="+tv.getMeasuredWidth());
+                        Log.i(TAG, "onClick: text--->"+tv.getTextSize()+"---"+tv.getTextScaleX()+"----");
+                        Log.i(TAG, "onClick: "+tv.getFontFeatureSettings());
+                    }
+                });
             }
         };
-      /* List<String> mLs = new ArrayList<>();
-        for(int i=0;i<20;i++){
-            mLs.add("Content" + i);
-        }
-        BaseAdapter adapter = new MyBaseAdapter<String>(mLs,mContext,R.layout.test) {
-            @Override
-            public void converView(ListViewHolder holder, String bean) {
-                holder.setText(R.id.test_lv,bean);
-            }
-        };*/
+
         normalFragmentDetail.setAdapter(adapter);
         normalFragmentDetail.setItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -74,11 +91,20 @@ public class NormalPresent {
     private void gotoSelectPage(int i) {
         Intent intent = new Intent();
         int count = normalFragmentDetail.getListViewHeaderCount();
+
         switch (i-count){
             case 0:
                 intent = new Intent(mContext,ListViewActivity.class);
                // intent.setClass(mContext,ListViewActivity.class);
                 break;
+            case 1:
+                intent = new Intent(mContext,AnimationActivity.class);
+                break;
+            case 2:
+                intent = new Intent(mContext, BluetoothActivity.class);
+                break;
+            default:
+                return;
         }
         mContext.startActivity(intent);
     }

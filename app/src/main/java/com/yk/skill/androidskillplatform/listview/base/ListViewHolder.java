@@ -45,4 +45,7 @@ public class ListViewHolder {
         }
         return (T) view;
     }
+    public void setOnClickListener(int viewId, View.OnClickListener onClickListener){
+        getView(viewId).setOnClickListener(onClickListener);
+    }
 }

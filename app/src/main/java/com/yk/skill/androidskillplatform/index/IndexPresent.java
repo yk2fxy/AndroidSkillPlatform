@@ -4,6 +4,8 @@ import com.yk.skill.androidskillplatform.R;
 import com.yk.skill.androidskillplatform.Third.index.ThirdFragment;
 import com.yk.skill.androidskillplatform.base.BaseFragment;
 import com.yk.skill.androidskillplatform.normal.index.NormalFragment;
+import com.yk.skill.androidskillplatform.other.index.OtherFragment;
+import com.yk.skill.androidskillplatform.selfcreate.index.SelfCreateFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +25,8 @@ public class IndexPresent  {
         indexViewDetail.setTitle("Index Page");
         mBaseFragments.add(new NormalFragment());
         mBaseFragments.add(new ThirdFragment());
+        mBaseFragments.add(new SelfCreateFragment());
+        mBaseFragments.add(new OtherFragment());
         onCheckecChanged(0);
     }
 

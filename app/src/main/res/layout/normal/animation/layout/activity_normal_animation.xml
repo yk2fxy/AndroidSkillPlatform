@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#fff"
+    android:layout_height="match_parent">
+    <include layout="@layout/index_header_layout" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="透明度"
+        android:id="@+id/act_normal_anim_alpha_btn"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="rotate"
+        android:id="@+id/act_normal_anim_rotate_btn"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="translation"
+        android:id="@+id/act_normal_anim_trans_btn"/>
+    <TextView
+        android:id="@+id/act_normal_anim_show_text"
+        android:layout_width="match_parent"
+        android:textSize="30sp"
+        android:textColor="#000"
+        android:layout_marginLeft="10dp"
+        android:layout_height="match_parent"
+        android:text="this is show text"/>
+</LinearLayout>

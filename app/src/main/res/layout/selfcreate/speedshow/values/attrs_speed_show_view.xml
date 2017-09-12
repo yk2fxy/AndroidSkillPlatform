@@ -1,0 +1,16 @@
+<resources>
+    <declare-styleable name="SpeedShowView">
+        <attr name="startAnglee" format="integer" />
+        <attr name="endAnglee" format="integer" />
+        <attr name="maxSpeed" format="integer" />
+        <attr name="speedSorts" format="integer" />
+        <attr name="minSpeedUnit" format="integer" />
+        <attr name="lineLength" format="integer" />
+        <attr name="pointColor" format="color"/>
+        <attr name="circleColor" format="color"/>
+        <attr name="circleBordor" format="integer"/>
+        <attr name="centerColor" format="color"/>
+        <attr name="centerRadius" format="integer"/>
+
+    </declare-styleable>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="#fff"
+        android:layout_height="80dp">
+        <SeekBar
+            android:layout_width="match_parent"
+            android:id="@+id/self_create_speed_seekbar"
+            android:maxWidth="300dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <com.yk.skill.androidskillplatform.selfcreate.speedshow.SpeedShowView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/self_create_speed_speed_show_view"
+        app:startAnglee="120"
+        app:maxSpeed="240"
+        app:minSpeedUnit="10"
+        app:lineLength="20"
+        app:pointColor="#faa"
+        />
+</LinearLayout>

@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 25
@@ -17,15 +19,21 @@ android {
         buildConfigField "String", "TINKER_ID", "\"1.0\""
         buildConfigField "String", "PLATFORM", "\"all\""
     }
-    sourceSets{
-        main{
+    sourceSets {
+        main {
             res.srcDirs = [
-                'src/main/res/layout/item',
-                'src/main/res/layout/normal/index',
-                'src/main/res/layout/normal/lisetview',
-                'src/main/res/layout/normal',
-                'src/main/res/layout',
-                'src/main/res'
+                    'src/main/res/layout/item',
+                    'src/main/res/layout/normal/index',
+                    'src/main/res/layout/normal/lisetview',
+                    'src/main/res/layout/normal/animation',
+                    'src/main/res/layout/normal/bluetooth',
+                    'src/main/res/layout/normal',
+                    'src/main/res/layout/selfcreate/speedshow',
+                    'src/main/res/layout/selfcreate',
+                    'src/main/res/layout/other/index',
+                    'src/main/res/layout/other',
+                    'src/main/res/layout',
+                    'src/main/res'
             ]
         }
     }
@@ -47,13 +55,16 @@ dependencies {
     })
     //可选，用于生成application类
     //tinker的核心库
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
     compile 'com.tencent.tinker:tinker-android-lib:1.7.11'
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.didi.virtualapk:core:0.9.0'
     compile 'com.jakewharton:butterknife:8.7.0'
     compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
     provided 'com.tencent.tinker:tinker-android-anno:1.7.11'
@@ -404,4 +415,7 @@ if (buildWithTinker()) {
             }
         }
     }
+}
+repositories {
+    mavenCentral()
 }
