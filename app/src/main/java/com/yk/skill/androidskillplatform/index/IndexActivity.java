@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
+import android.view.View;
 import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.RadioGroup;
@@ -14,13 +15,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yk.skill.androidskillplatform.R;
+import com.yk.skill.androidskillplatform.base.BaseActivity;
 import com.yk.skill.androidskillplatform.base.BaseFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
 
-public class IndexActivity extends AppCompatActivity implements IndexViewDetail {
+public class IndexActivity extends BaseActivity implements IndexViewDetail {
 
     @BindView(R.id.header_text)
     TextView mHeaderText;
@@ -28,28 +30,40 @@ public class IndexActivity extends AppCompatActivity implements IndexViewDetail 
     @BindView(R.id.index_act_rg)
     RadioGroup mIndexActRg;
 
-    @Override
+ /*   @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //动画相关
         getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
-        Transition transition = TransitionInflater.from(this).inflateTransition(android.R.transition.explode);
-        transition.setDuration(3000);
-        getWindow().setEnterTransition(transition);
         setContentView(R.layout.activity_index);
+        //绑定butterknife
         ButterKnife.bind(this);
-        mIndexPresent.init();
-        mIndexActRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup,int i) {
-                mIndexPresent.onCheckecChanged(i);
-            }
-        });
+        //让present层去初始化页面
 
+
+    }*/
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_index;
     }
 
     @Override
+    public void initView() {
+        mIndexPresent.init();
+        //设置radiogroup 监听
+        mIndexActRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup,int i) {
+                //让present 去实现radiogroup切换的业务
+                mIndexPresent.onCheckecChanged(i);
+            }
+        });
+    }
+
+
+    @Override
     public void setTitle(String title) {
+        //设置页面header
         mHeaderText.setText(title);
     }
 
@@ -57,10 +71,28 @@ public class IndexActivity extends AppCompatActivity implements IndexViewDetail 
     public void setViewPage(int position) {
     }
 
+    /**
+     * 显示指定的fragment
+     * @param baseFragment
+     */
     @Override
     public void showFragment(BaseFragment baseFragment) {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
+        /**
+         * 将需要显示的fragment显示出来
+         * 这里有两种实现方式
+         * 1.replace---ft.replace(R.id.index_fl_container,baseFragment);
+         * 2.add、hide和show三个方法组合使用--
+         * ｛
+                 ft.add(R.id.index_fl_container,baseFragment);
+                 ft.hide(baseFragment);
+                 ft.show(baseFragment);
+            ｝
+         *两种方法比较：方式1 对比 方式2 时间需要的多，但是对内存消耗比较少
+         * 如果fragment比较少对效率要求高建议用方式2，
+         * 如果fragment比较多对效率要求低可以用方式1，
+         */
         ft.replace(R.id.index_fl_container,baseFragment);
         ft.commit();
     }

@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         finish();
         //activity动画跳转的几种方法
         //http://blog.csdn.net/qq_23547831/article/details/51821159
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
+        overridePendingTransition(R.anim.slide_in_left_self, R.anim.slide_in_left_self);
+        //overridePendingTransition(R.anim.slide_in_left_self,android.R.anim.slide_in_left);
     }
 }
