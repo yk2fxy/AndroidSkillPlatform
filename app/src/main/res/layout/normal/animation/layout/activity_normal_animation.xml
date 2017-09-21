@@ -19,6 +19,11 @@
         android:layout_height="wrap_content"
         android:text="translation"
         android:id="@+id/act_normal_anim_trans_btn"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="translation"
+        android:id="@+id/act_normal_anim_value_btn"/>
     <TextView
         android:id="@+id/act_normal_anim_show_text"
         android:layout_width="match_parent"

@@ -1,5 +1,6 @@
 package com.yk.skill.androidskillplatform.normal.animation;
 
+import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -53,6 +54,11 @@ public class AnimationActivity extends Activity{
     @OnClick(R.id.act_normal_anim_rotate_btn)
     public void clickRotate(){
         startAnimation(new RotateAnimation(0,360, RotateAnimation.RELATIVE_TO_SELF,0.5f,RotateAnimation.RELATIVE_TO_SELF,0.5f));
+
+    }
+    @OnClick(R.id.act_normal_anim_value_btn)
+    public void clickValue(){
+        ValueAnimator animator = new ValueAnimator();
 
     }
     @OnClick(R.id.act_normal_anim_trans_btn)

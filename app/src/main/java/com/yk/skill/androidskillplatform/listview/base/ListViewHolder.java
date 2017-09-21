@@ -42,6 +42,7 @@ public class ListViewHolder {
         View view = views.get(viewId);
         if(view==null){
             view = rootView.findViewById(viewId);
+            views.put(viewId,view);
         }
         return (T) view;
     }

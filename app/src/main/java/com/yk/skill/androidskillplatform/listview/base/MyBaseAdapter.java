@@ -2,6 +2,7 @@ package com.yk.skill.androidskillplatform.listview.base;
 
 import android.content.Context;
 import android.util.SparseArray;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -43,11 +44,14 @@ public abstract class MyBaseAdapter<T> extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
+
         ListViewHolder holder = ListViewHolder.get(mContext,view, mLayoutId,viewGroup);
         converView(holder,(T)datas.get(i));
         return holder.getRootView();
     }
-
+    class ViewHolder{
+        View view;
+    }
     public abstract void converView(ListViewHolder holder, T text) ;
 
 }
