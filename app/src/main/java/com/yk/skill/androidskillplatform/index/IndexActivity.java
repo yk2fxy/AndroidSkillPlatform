@@ -79,20 +79,6 @@ public class IndexActivity extends BaseActivity implements IndexViewDetail {
     public void showFragment(BaseFragment baseFragment) {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        /**
-         * 将需要显示的fragment显示出来
-         * 这里有两种实现方式
-         * 1.replace---ft.replace(R.id.index_fl_container,baseFragment);
-         * 2.add、hide和show三个方法组合使用--
-         * ｛
-                 ft.add(R.id.index_fl_container,baseFragment);
-                 ft.hide(baseFragment);
-                 ft.show(baseFragment);
-            ｝
-         *两种方法比较：方式1 对比 方式2 时间需要的多，但是对内存消耗比较少
-         * 如果fragment比较少对效率要求高建议用方式2，
-         * 如果fragment比较多对效率要求低可以用方式1，
-         */
         ft.replace(R.id.index_fl_container,baseFragment);
         ft.commit();
     }

@@ -4,10 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -30,6 +33,10 @@ public class ListViewActivity extends Activity{
     TextView title;
     @BindView(R.id.header_back_btn)
     Button backBtn;
+    @BindView(R.id.header_html_root)
+    LinearLayout rootLL;
+    @BindView(R.id.header_html_address)
+    TextView htmlAddress;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +55,9 @@ public class ListViewActivity extends Activity{
         };
         title.setText("ListView");
         backBtn.setVisibility(View.VISIBLE);
+        rootLL.setVisibility(View.VISIBLE);
+        htmlAddress.setText(Html.fromHtml("<a href='tel:18565554482'>打电话</a>,<a href='smsto:18565554482'>发短信</a>,<a href='mailto:584991843@qq.com'>发邮件</a>,<a href='http://www.baidu.com'>Go百度</a>"));
+        htmlAddress.setMovementMethod(LinkMovementMethod.getInstance());
         lv.setAdapter(adapter);
     }
 }

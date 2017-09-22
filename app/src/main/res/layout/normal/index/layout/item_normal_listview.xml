@@ -38,10 +38,10 @@
     <TextView
         android:id="@+id/item_normal_list_content"
         android:layout_width="0dp"
-        android:layout_height="14dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:maxLines="1"
-        android:text="TextViewTextViewTextViewTextViewTextViewTextViewTextView"
+        android:text="TextViewTextView222222TextViewTextViewTextViewTextViewTextView11111111"
         android:textColor="@android:color/darker_gray"
         app:layout_constraintLeft_toRightOf="@+id/item_normal_list_img"
         app:layout_constraintRight_toLeftOf="@+id/item_normal_list_more_img"

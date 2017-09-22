@@ -67,13 +67,16 @@ public class NormalPresent {
                     @Override
                     public void onClick(View v) {
                         TextView tv =  holder.getView(R.id.item_normal_list_content);
-                        tv.measure(0,0);
+                        /*if(tv.getLineCount()>1){
+                            Log.i(TAG, "onClick: setconut==1");
+                            tv.setMaxLines(1);
+                        }else {
+                            Log.i(TAG, "onClick: setcount==10");
+                            tv.setMaxLines(10);}*/
                         tv.setMaxLines(10);
-                        tv.setHeight(500);
-                        tv.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
                         Log.i(TAG, "onClick: "+tv.getMeasuredHeight()+"---w="+tv.getMeasuredWidth());
-                        Log.i(TAG, "onClick: text--->"+tv.getTextSize()+"---"+tv.getTextScaleX()+"----");
-                        Log.i(TAG, "onClick: "+tv.getFontFeatureSettings());
+                        Log.i(TAG, "onClick: text--->"+tv.getTextSize()+"---"+tv.getTextScaleX()+"----"+tv.getLineCount());
+                        //Log.i(TAG, "onClick: "+tv.getFontFeatureSettings());
                     }
                 });
             }
