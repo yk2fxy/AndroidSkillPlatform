@@ -16,6 +16,7 @@ import com.yk.skill.androidskillplatform.listview.base.MyBaseAdapter;
 import com.yk.skill.androidskillplatform.normal.animation.AnimationActivity;
 import com.yk.skill.androidskillplatform.normal.bluetooth.BluetoothActivity;
 import com.yk.skill.androidskillplatform.normal.listview.ListViewActivity;
+import com.yk.skill.androidskillplatform.webview.WebViewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,6 +58,10 @@ public class NormalPresent {
         animationBean.setTitle("Bluetooth");
         animationBean.setContent("蓝牙连接 introduction");
         lists.add(animationBean);
+        NormalIndexItemBean webViewBean = new NormalIndexItemBean();
+        webViewBean.setTitle("WebView");
+        webViewBean.setContent("");
+        lists.add(webViewBean);
 
         BaseAdapter adapter = new MyBaseAdapter<NormalIndexItemBean>(lists,mContext,R.layout.item_normal_listview) {
             @Override
@@ -105,6 +110,9 @@ public class NormalPresent {
                 break;
             case 2:
                 intent = new Intent(mContext, BluetoothActivity.class);
+                break;
+            case 3:
+                intent = new Intent(mContext, WebViewActivity.class);
                 break;
             default:
                 return;

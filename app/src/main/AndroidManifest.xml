@@ -29,8 +29,9 @@
         <activity android:name=".normal.listview.ListViewActivity" />
         <activity android:name=".normal.animation.AnimationActivity" />
         <activity android:name=".selfcreate.speedshow.SpeedShowActivity" />
-        <activity android:name=".kotlin.KotlinActivity"></activity>
-        <activity android:name=".normal.bluetooth.BluetoothActivity"></activity>
+        <activity android:name=".kotlin.KotlinActivity" />
+        <activity android:name=".normal.bluetooth.BluetoothActivity" />
+        <activity android:name=".webview.WebViewActivity"></activity>
     </application>
 
 </manifest>
