@@ -72,13 +72,13 @@ public class NormalPresent {
                     @Override
                     public void onClick(View v) {
                         TextView tv =  holder.getView(R.id.item_normal_list_content);
-                        /*if(tv.getLineCount()>1){
+                        if(tv.getMaxLines()>1){
                             Log.i(TAG, "onClick: setconut==1");
                             tv.setMaxLines(1);
                         }else {
                             Log.i(TAG, "onClick: setcount==10");
-                            tv.setMaxLines(10);}*/
-                        tv.setMaxLines(10);
+                            tv.setMaxLines(10);}
+                        //tv.setMaxLines(10);
                         Log.i(TAG, "onClick: "+tv.getMeasuredHeight()+"---w="+tv.getMeasuredWidth());
                         Log.i(TAG, "onClick: text--->"+tv.getTextSize()+"---"+tv.getTextScaleX()+"----"+tv.getLineCount());
                         //Log.i(TAG, "onClick: "+tv.getFontFeatureSettings());
