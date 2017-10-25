@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.yk.skill.androidskillplatform.selfcreate.toptitlebar.TopTitleBarSelfView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        app:cancelText="取消"
+        app:okText="完成"
+        app:titleText="标题"
+        app:titleTextSize="30sp"/>
+
+</FrameLayout>

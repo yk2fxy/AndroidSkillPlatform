@@ -32,6 +32,7 @@
         <activity android:name=".kotlin.KotlinActivity" />
         <activity android:name=".normal.bluetooth.BluetoothActivity" />
         <activity android:name=".webview.WebViewActivity"></activity>
+        <activity android:name=".selfcreate.toptitlebar.SelfTopTitleBarActivity"></activity>
     </application>
 
 </manifest>

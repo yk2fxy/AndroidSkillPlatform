@@ -29,6 +29,7 @@ android {
                     'src/main/res/layout/normal/bluetooth',
                     'src/main/res/layout/normal',
                     'src/main/res/layout/selfcreate/speedshow',
+                    'src/main/res/layout/selfcreate/toptitlebar',
                     'src/main/res/layout/selfcreate',
                     'src/main/res/layout/other/index',
                     'src/main/res/layout/other',
