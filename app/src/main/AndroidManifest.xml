@@ -9,8 +9,8 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
+    <!-- android:name=".TinkerApplicationLike"-->
     <application
-        android:name=".TinkerApplicationLike"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -31,8 +31,9 @@
         <activity android:name=".selfcreate.speedshow.SpeedShowActivity" />
         <activity android:name=".kotlin.KotlinActivity" />
         <activity android:name=".normal.bluetooth.BluetoothActivity" />
-        <activity android:name=".webview.WebViewActivity"></activity>
-        <activity android:name=".selfcreate.toptitlebar.SelfTopTitleBarActivity"></activity>
+        <activity android:name=".webview.WebViewActivity" />
+        <activity android:name=".selfcreate.toptitlebar.SelfTopTitleBarActivity" />
+        <activity android:name=".normal.reflact.ReflactActivity"></activity>
     </application>
 
 </manifest>
