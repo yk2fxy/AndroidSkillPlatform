@@ -39,7 +39,6 @@ public class IndexActivity extends BaseActivity implements IndexViewDetail {
         ButterKnife.bind(this);
         //让present层去初始化页面
 
-
     }*/
 
     @Override

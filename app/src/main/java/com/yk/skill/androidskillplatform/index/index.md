@@ -1,4 +1,5 @@
 #index
+
 ##此目录包含IndexAcitivity、IndexPresent、IndexViewDetail三个文件，三个文件以MVP模式构成一个index界面
 
 ##此页面的比较简单，只有展示fragment和fragment的切换，涉及到业务处理和数据比较少，所以就没有写model层；其中IndexViewDetail和IndexAcitivity是view层代码，IndexPresent是present层代码。

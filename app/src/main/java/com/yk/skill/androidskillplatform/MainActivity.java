@@ -1,15 +1,10 @@
 package com.yk.skill.androidskillplatform;
 
 import android.content.Intent;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
-
-import com.tencent.tinker.lib.tinker.TinkerInstaller;
 import com.yk.skill.androidskillplatform.index.IndexActivity;
 
-import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,8 +12,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //tinker
-        TinkerInstaller.onReceiveUpgradePatch(this, Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator+"patch.apk");
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
