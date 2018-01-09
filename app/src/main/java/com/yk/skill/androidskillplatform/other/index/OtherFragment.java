@@ -1,5 +1,6 @@
 package com.yk.skill.androidskillplatform.other.index;
 
+import android.content.Intent;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 import com.yk.skill.androidskillplatform.R;
 import com.yk.skill.androidskillplatform.base.BaseFragment;
+import com.yk.skill.androidskillplatform.other.tinker.TinkerActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,9 +34,11 @@ public class OtherFragment extends BaseFragment {
         recycleListView.setLayoutManager(mLayoutManager);
         recycleListView.setAdapter(new MyRecyclerAdapter());
         recycleListView.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
+        mLists.add("tinker");
         for(int i=0;i<20;i++){
             mLists.add("aaaaa"+i);
         }
+
         return view;
     }
     class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder>{
@@ -62,6 +66,10 @@ public class OtherFragment extends BaseFragment {
         public MyViewHolder(View itemView) {
             super(itemView);
             tv = (TextView) itemView.findViewById(R.id.item_other_index_tv);
+            tv.setOnClickListener(view -> {
+                Intent intent = new Intent(getActivity(), TinkerActivity.class);
+                startActivity(intent);
+            });
         }
     }
 }

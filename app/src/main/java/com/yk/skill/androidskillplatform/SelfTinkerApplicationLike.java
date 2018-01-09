@@ -46,6 +46,7 @@ public class SelfTinkerApplicationLike extends DefaultApplicationLike{
         //installTinker after load multiDex
         //or you can put com.tencent.tinker.** to main dex
         TinkerInstaller.install(this);
-        Tinker tinker = Tinker.with(getApplication());
+        //Tinker tinker = Tinker.with(getApplication());
     }
+
 }

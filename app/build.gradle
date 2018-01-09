@@ -7,9 +7,9 @@ android {
     signingConfigs {
         release {
             keyAlias 'key0'
-            keyPassword '901128'
-            storeFile file('D:/androidkeystore/ykSkill.jks')
-            storePassword '901128'
+            keyPassword '123456'
+            storeFile file('../keystore/skill.jks')
+            storePassword '123456'
         }
     }
     compileSdkVersion 25
@@ -44,6 +44,7 @@ android {
                     'src/main/res/layout/selfcreate/flowgroup',
                     'src/main/res/layout/selfcreate',
                     'src/main/res/layout/other/index',
+                    'src/main/res/layout/other/tinker',
                     'src/main/res/layout/other',
                     'src/main/res/layout',
                     'src/main/res'
@@ -78,7 +79,7 @@ android {
         provided 'com.tencent.tinker:tinker-android-anno:1.9.1'
         compile 'com.tencent.tinker:tinker-android-lib:1.9.1'
         compile 'com.android.support:multidex:1.0.1'
-      //  compile 'com.didi.virtualapk:core:0.9.0'
+        //  compile 'com.didi.virtualapk:core:0.9.0'
         compile 'com.jakewharton:butterknife:8.8.1'
         compile 'com.android.support:support-v4:25.3.1'
         compile 'com.android.support:recyclerview-v7:25.3.1'
@@ -86,11 +87,16 @@ android {
         annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
         compile "com.android.support:multidex:1.0.1"
     }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 repositories {
     mavenCentral()
     google()
 }
+
 def gitSha() {
     try {
         String gitRev = 'git rev-parse --short HEAD'.execute(null, project.rootDir).text.trim()
@@ -117,11 +123,11 @@ ext {
 
     //for normal build
     //old apk file to build patch apk
-    tinkerOldApkPath = "${bakPath}/app-release-0103-13-53-36.apk"
+    tinkerOldApkPath = "${bakPath}/app-release-0109-10-01-47.apk"
     //proguard mapping file to build patch apk
-    tinkerApplyMappingPath = "${bakPath}/app-release-0103-13-53-36-mapping.txt"
+    tinkerApplyMappingPath = "${bakPath}/app-release-0109-10-01-47-mapping.txt"
     //resource R.txt to build patch apk, must input if there is resource changed
-    tinkerApplyResourcePath = "${bakPath}/app-release-0103-13-53-36-R.txt"
+    tinkerApplyResourcePath = "${bakPath}/app-release-0109-10-01-47-R.txt"
 
     //only use for build all flavor, if not, just ignore this field
     tinkerBuildFlavorDirectory = "${bakPath}/app-1018-17-32-47"
@@ -446,4 +452,6 @@ if (buildWithTinker()) {
     }
 }
 dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:design:25.4.0'
 }
