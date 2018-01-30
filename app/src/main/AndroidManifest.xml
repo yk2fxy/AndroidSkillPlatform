@@ -39,7 +39,8 @@
         <activity
             android:name=".other.tinker.TinkerActivity"
             android:label="@string/title_activity_tinker"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".selfcreate.mimesweeper.MimesweeperActivity"></activity>
     </application>
 
 </manifest>

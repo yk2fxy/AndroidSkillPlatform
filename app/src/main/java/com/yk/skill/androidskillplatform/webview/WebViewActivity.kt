@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_web_view.*
 import java.net.URL
 
 class WebViewActivity : AppCompatActivity() {
-    open val TAG = WebViewActivity::class.java.simpleName
+    val TAG = WebViewActivity::class.java.simpleName
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_web_view)

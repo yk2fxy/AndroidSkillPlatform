@@ -8,6 +8,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.yk.skill.androidskillplatform.R;
+import com.yk.skill.androidskillplatform.selfcreate.mimesweeper.MimesweeperActivity;
 import com.yk.skill.androidskillplatform.selfcreate.toptitlebar.SelfTopTitleBarActivity;
 import com.yk.skill.androidskillplatform.selfcreate.speedshow.SpeedShowActivity;
 import com.yk.skill.androidskillplatform.listview.base.ListViewHolder;
@@ -29,6 +30,7 @@ public class SelfCreateFragment extends com.yk.skill.androidskillplatform.base.B
 
         mLists.add("自定义码表盘");
         mLists.add("自定义顶部标题栏");
+        mLists.add("扫雷");
         mListView.setAdapter(new MyBaseAdapter<String>(mLists,getActivity(),R.layout.item_normal_listview) {
             @Override
             public void converView(ListViewHolder holder, String text) {
@@ -48,6 +50,9 @@ public class SelfCreateFragment extends com.yk.skill.androidskillplatform.base.B
                         Intent intent2 = new Intent(getActivity(), SelfTopTitleBarActivity.class);
                         startActivity(intent2);
                         break;
+                    case 3:
+                        Intent mimeIntent = new Intent(getActivity(), MimesweeperActivity.class);
+                        startActivity(mimeIntent);
                 }
             }
         });

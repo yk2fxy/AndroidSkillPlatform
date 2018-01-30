@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="MimeSelfView">
+        <attr name="mimeCol" format="integer" />
+        <attr name="mimeRow" format="integer" />
+        <attr name="exampleColor" format="color" />
+        <attr name="exampleDrawable" format="color|reference" />
+    </declare-styleable>
+</resources>

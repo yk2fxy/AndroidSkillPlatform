@@ -56,8 +56,8 @@ public class ListViewActivity extends Activity{
         title.setText("ListView");
         backBtn.setVisibility(View.VISIBLE);
         rootLL.setVisibility(View.VISIBLE);
-        htmlAddress.setText(Html.fromHtml("<a href='tel:18565554482'>打电话</a>,<a href='smsto:18565554482'>发短信</a>,<a href='mailto:584991843@qq.com'>发邮件</a>,<a href='http://www.baidu.com'>Go百度</a>"));
-        htmlAddress.setMovementMethod(LinkMovementMethod.getInstance());
+        //htmlAddress.setText(Html.fromHtml("<a href='tel:18565554482'>打电话</a>,<a href='smsto:18565554482'>发短信</a>,<a href='mailto:584991843@qq.com'>发邮件</a>,<a href='http://www.baidu.com'>Go百度</a>"));
+      //  htmlAddress.setMovementMethod(LinkMovementMethod.getInstance());
         lv.setAdapter(adapter);
     }
 }
