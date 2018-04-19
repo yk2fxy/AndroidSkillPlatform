@@ -3,12 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.yk.skill.androidskillplatform.selfcreate.mimesweeper.MimeSelfView
+    <com.yk.skill.androidskillplatform.selfcreate.mimesweeper.view.MineViewContainer
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#fff"
-        app:mimeCol="2"
-        app:mimeRow="6"
+        app:colNum="10"
+        app:rowNum="10"
         />
 
 </FrameLayout>

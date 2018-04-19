@@ -1,15 +1,7 @@
 package com.yk.skill.androidskillplatform.index;
 
-import android.os.Bundle;
-import android.support.annotation.IdRes;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.transition.Transition;
-import android.transition.TransitionInflater;
-import android.view.View;
-import android.view.Window;
-import android.widget.FrameLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,16 +10,11 @@ import com.yk.skill.androidskillplatform.R;
 import com.yk.skill.androidskillplatform.base.BaseActivity;
 import com.yk.skill.androidskillplatform.base.BaseFragment;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnCheckedChanged;
 
 public class IndexActivity extends BaseActivity implements IndexViewDetail {
 
-    @BindView(R.id.header_text)
     TextView mHeaderText;
     IndexPresent mIndexPresent = new IndexPresent(this);
-    @BindView(R.id.index_act_rg)
     RadioGroup mIndexActRg;
 
  /*   @Override
@@ -48,6 +35,8 @@ public class IndexActivity extends BaseActivity implements IndexViewDetail {
 
     @Override
     public void initView() {
+        mHeaderText = findViewById(R.id.header_text);
+        mIndexActRg = findViewById(R.id.index_act_rg);
         mIndexPresent.init();
         //设置radiogroup 监听
         mIndexActRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {

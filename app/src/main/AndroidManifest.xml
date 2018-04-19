@@ -23,7 +23,6 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -36,11 +35,17 @@
         <activity android:name=".webview.WebViewActivity" />
         <activity android:name=".selfcreate.toptitlebar.SelfTopTitleBarActivity" />
         <activity android:name=".normal.reflact.ReflactActivity" />
+        <activity android:name=".selfcreate.flower_curve.FlowerCurveActivity" />
         <activity
             android:name=".other.tinker.TinkerActivity"
             android:label="@string/title_activity_tinker"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".selfcreate.mimesweeper.MimesweeperActivity"></activity>
+        <activity android:name=".selfcreate.mimesweeper.MimesweeperActivity" />
+        <activity android:name=".selfcreate.double_cache_canvas.DoubleCacheCanvasActivity" />
+        <activity
+            android:name=".selfcreate.single_panel.SinglePanelActivity"
+            android:label="@string/title_activity_single_panel"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -5,4 +5,8 @@
         <attr name="exampleColor" format="color" />
         <attr name="exampleDrawable" format="color|reference" />
     </declare-styleable>
+    <declare-styleable name="MimeBlockBase">
+        <attr name="colNum" format="integer"/>
+        <attr name="rowNum" format="integer"/>
+    </declare-styleable>
 </resources>

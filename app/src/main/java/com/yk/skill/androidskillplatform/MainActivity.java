@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void goToIndex() {
 
+       // Intent intent = new Intent(MainActivity.this, IndexActivity.class);
         Intent intent = new Intent(MainActivity.this, IndexActivity.class);
         startActivity(intent);
         finish();

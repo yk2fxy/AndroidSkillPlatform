@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.jakewharton.butterknife'
+//apply plugin: 'com.jakewharton.butterknife'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.tencent.tinker.patch'
 android {
@@ -12,8 +12,8 @@ android {
             storePassword '123456'
         }
     }
-    compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 26
+   // buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.yk.skill.androidskillplatform"
         minSdkVersion 17
@@ -42,7 +42,10 @@ android {
                     'src/main/res/layout/selfcreate/speedshow',
                     'src/main/res/layout/selfcreate/toptitlebar',
                     'src/main/res/layout/selfcreate/flowgroup',
+                    'src/main/res/layout/selfcreate/flowercurve',
                     'src/main/res/layout/selfcreate/mimesweeper',
+                    'src/main/res/layout/selfcreate/singlepanel',
+                    'src/main/res/layout/selfcreate/doublecachecanvas',
                     'src/main/res/layout/selfcreate',
                     'src/main/res/layout/other/index',
                     'src/main/res/layout/other/tinker',
@@ -73,7 +76,7 @@ android {
         //可选，用于生成application类
         //tinker的核心库
         compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-        compile 'com.android.support:appcompat-v7:25.3.1'
+        compile 'com.android.support:appcompat-v7:26.1.0'
         compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
         //compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
         annotationProcessor 'com.tencent.tinker:tinker-android-anno:1.9.1'
@@ -81,11 +84,11 @@ android {
         compile 'com.tencent.tinker:tinker-android-lib:1.9.1'
         compile 'com.android.support:multidex:1.0.1'
         //  compile 'com.didi.virtualapk:core:0.9.0'
-        compile 'com.jakewharton:butterknife:8.8.1'
-        compile 'com.android.support:support-v4:25.3.1'
-        compile 'com.android.support:recyclerview-v7:25.3.1'
+       // compile 'com.jakewharton:butterknife:8.8.1'
+        compile 'com.android.support:support-v4:26.1.'
+        compile 'com.android.support:recyclerview-v7:26.1.0'
         testCompile 'junit:junit:4.12'
-        annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+      //  annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
         compile "com.android.support:multidex:1.0.1"
         compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
 // Because RxAndroid releases are few and far between, it is recommended you also
@@ -459,5 +462,5 @@ if (buildWithTinker()) {
 }
 dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation 'com.android.support:design:25.4.0'
+    implementation 'com.android.support:design:26.1.0'
 }

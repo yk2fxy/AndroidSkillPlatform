@@ -1,15 +1,12 @@
 package com.yk.skill.androidskillplatform.base;
 
 import android.os.Bundle;
-import android.sax.RootElement;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * 此app所有用到fragment的基类，用于处理一些fragment公共的操作，简化子fragment的代码
@@ -17,14 +14,11 @@ import butterknife.Unbinder;
  */
 
 public abstract class BaseFragment extends Fragment {
-    Unbinder unbinder;
-    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //获取子view的初始化界面
         View rootView = initView();
         //绑定butterknife框架
-        unbinder = ButterKnife.bind(rootView);
         //初始化数据
         initDatas();
         return rootView;
@@ -49,6 +43,5 @@ public abstract class BaseFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         //在fragment被销毁是解除绑定buterknife
-        unbinder.unbind();
     }
 }

@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.yk.skill.androidskillplatform.R;
 import com.yk.skill.androidskillplatform.base.BaseFragment;
 
-import butterknife.BindView;
 
 public class NormalFragment extends BaseFragment implements NormalFragmentDetail{
 

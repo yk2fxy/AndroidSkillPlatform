@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yk.skill.androidskillplatform.selfcreate.double_cache_canvas.DoubleCacheCanvasActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="80dp"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:id="@+id/double_cache_canvas_btn_save"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="80dp"
+            android:text="Erase"
+            android:textAllCaps="false"
+            android:id="@+id/double_cache_canvas_btn_erase"/>
+    </LinearLayout>
+    <com.yk.skill.androidskillplatform.selfcreate.single_panel.view.SingleCacheCanvasView
+        android:layout_width="match_parent"
+        android:id="@+id/double_cache_canvas_view"
+        android:layout_height="match_parent"/>
+</LinearLayout>

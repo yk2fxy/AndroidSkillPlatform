@@ -21,6 +21,7 @@ import com.yk.skill.androidskillplatform.R;
 
 /**
  * TODO: document your custom view class.
+ * listview 下拉刷新
  */
 public class MySelfListView extends ListView implements AbsListView.OnScrollListener{
     public final static String TAG = MySelfListView.class.getSimpleName();

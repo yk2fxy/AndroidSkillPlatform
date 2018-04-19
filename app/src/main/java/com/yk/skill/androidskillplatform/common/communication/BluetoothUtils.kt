@@ -12,10 +12,10 @@ class BluetoothUtils{
     fun open(context:Context):Boolean{
         mContext = context;
         var adapter = BluetoothAdapter.getDefaultAdapter();
-        var bondedDevices = adapter.bondedDevices as Set<BluetoothDevice>
-        for (b in bondedDevices){
+      //  var bondedDevices = adapter.bondedDevices as Set<BluetoothDevice>
+      /*  for (b in bondedDevices){
 
-        }
+        }*/
         return false;
     }
 }
