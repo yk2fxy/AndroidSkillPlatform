@@ -11,7 +11,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.1'
+        classpath 'com.android.tools.build:gradle:3.1.2'
         classpath('com.tencent.tinker:tinker-patch-gradle-plugin:1.9.1')
      //   classpath 'com.didi.virtualapk:gradle:0.9.0'
         //classpath "com.jakewharton:butterknife-gradle-plugin:$butterknife_version"
@@ -24,6 +24,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        google()
     }
 }
 

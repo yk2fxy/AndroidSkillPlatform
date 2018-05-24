@@ -63,7 +63,7 @@ class SingleCacheCanvasView : View {
         var out = FileOutputStream(Environment.getExternalStorageDirectory().absoluteFile.toString()+File.separator+"test.png")
         cacheBmp?.compress(Bitmap.CompressFormat.PNG,0,out)
     }
-    //清除轨迹，思路---重新创建缓冲画布的
+    //清除轨迹，思路---重新创建缓冲画布，以及将path路径重置
     fun clearBmp(){
         cacheBmp = Bitmap.createBitmap(cacheBmpWidth,cacheBmpHeight,Bitmap.Config.ARGB_8888)
         cacheBmp?.eraseColor(Color.WHITE)
