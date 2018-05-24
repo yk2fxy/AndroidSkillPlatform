@@ -2,9 +2,10 @@
 .gradle
 /local.properties
 /.idea/workspace.xml
-/.idea/libraries
+/.idea/*
 .DS_Store
-/build
-/captures
+/build/*
+/captures/*
 .externalNativeBuild
 /.gradle
+make_backup_2017-09-07_09-23-07.zip
