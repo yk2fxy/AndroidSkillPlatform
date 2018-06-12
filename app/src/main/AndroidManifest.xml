@@ -23,6 +23,7 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -45,7 +46,8 @@
         <activity
             android:name=".selfcreate.single_panel.SinglePanelActivity"
             android:label="@string/title_activity_single_panel"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".Third.rxjava.RxJavaActivity"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,6 @@
+/build/*
+/release/*
+/src/androidTeset/*
+/src/test/*
+*.iml
+app-release.apk

@@ -1,1 +1,1 @@
-include ':app', ':ThirdFrameworkLibrary', ':BaseLibrary', ':BaseAllModule', ':ThirdModule'
+include ':app', ':ThirdFrameworkLibrary', ':BaseLibrary', ':BaseAllModule', ':ThirdUsedModule', ':SelfCreateViewModule', ':NormalCtlViewModule'

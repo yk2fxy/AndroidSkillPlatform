@@ -1,9 +1,8 @@
-/*if(isModule.toBoolean()) {
+if(isModule.toBoolean()) {
     apply plugin: 'com.android.library'
 }else {
     apply plugin: 'com.android.application'
-}*/
-apply plugin: 'com.android.library'
+}
 apply plugin: 'kotlin-android'
 
 android {
@@ -17,7 +16,7 @@ android {
         versionCode 1
         versionName "1.0"
         if(isModule.toBoolean()){
-           // applicationId 'com.yk.baselibrary'
+            applicationId 'com.yk.selfcreateviewmodule'
         }
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -32,12 +31,12 @@ android {
     sourceSets{
         main{
             if(isModule.toBoolean()){
-              //  manifest.srcFile "src/main/AndroidManifest.xml"
+                manifest.srcFile "src/main/AndroidManifest.xml"
                 java {
                     exclude "**/debug/**"
                 }
             }else{
-               // manifest.srcFile "src/main/debug/AndroidManifest.xml"
+                manifest.srcFile "src/main/debug/AndroidManifest.xml"
             }
         }
     }
@@ -46,11 +45,11 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    api "$rootProject.ext.android_support_v"
+    implementation 'com.android.support:appcompat-v7:26.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
     mavenCentral()

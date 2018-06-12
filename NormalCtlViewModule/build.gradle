@@ -1,9 +1,8 @@
-/*if(isModule.toBoolean()) {
+if(isModule.toBoolean()) {
     apply plugin: 'com.android.library'
 }else {
     apply plugin: 'com.android.application'
-}*/
-apply plugin: 'com.android.library'
+}
 apply plugin: 'kotlin-android'
 
 android {
@@ -17,10 +16,14 @@ android {
         versionCode 1
         versionName "1.0"
         if(isModule.toBoolean()){
-           // applicationId 'com.yk.baselibrary'
+            applicationId 'com.yk.normalctlviewmodule'
         }
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
     }
 
     buildTypes {
@@ -32,12 +35,12 @@ android {
     sourceSets{
         main{
             if(isModule.toBoolean()){
-              //  manifest.srcFile "src/main/AndroidManifest.xml"
+                manifest.srcFile "src/main/AndroidManifest.xml"
                 java {
                     exclude "**/debug/**"
                 }
             }else{
-               // manifest.srcFile "src/main/debug/AndroidManifest.xml"
+                manifest.srcFile "src/main/debug/AndroidManifest.xml"
             }
         }
     }
@@ -46,11 +49,13 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    api "$rootProject.ext.android_support_v"
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "$rootProject.ext.android_support_v"
+    testImplementation "$rootProject.ext.junit_v"
+    androidTestImplementation "$rootProject.ext.test_runner_v"
+    androidTestImplementation "$rootProject.ext.test_espresso_core_v"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api "$rootProject.ext.arouter_api"
+    annotationProcessor "$rootProject.ext.arouter_comiler"
 }
 repositories {
     mavenCentral()

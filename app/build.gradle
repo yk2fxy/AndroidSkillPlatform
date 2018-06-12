@@ -13,7 +13,7 @@ android {
         }
     }
     compileSdkVersion 26
-   // buildToolsVersion '26.0.2'
+    // buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.yk.skill.androidskillplatform"
         minSdkVersion 17
@@ -84,11 +84,11 @@ android {
         implementation 'com.tencent.tinker:tinker-android-lib:1.9.1'
         implementation 'com.android.support:multidex:1.0.1'
         //  compile 'com.didi.virtualapk:core:0.9.0'
-       // compile 'com.jakewharton:butterknife:8.8.1'
+        // compile 'com.jakewharton:butterknife:8.8.1'
         implementation 'com.android.support:support-v4:26.1.'
         implementation 'com.android.support:recyclerview-v7:26.1.0'
         testImplementation 'junit:junit:4.12'
-      //  annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+        //  annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
         implementation "com.android.support:multidex:1.0.1"
         implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
 // Because RxAndroid releases are few and far between, it is recommended you also
